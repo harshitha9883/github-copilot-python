@@ -4,34 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harshitha's Sudoku</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <main class="container">
-        <header class="app-header">
+        <header class="header">
             <h1>Harshitha's Sudoku</h1>
-            <div class="header-tools">
-                <label for="difficulty-selector">Difficulty:</label>
-                <select id="difficulty-selector">
+            <div>
+                <select id="difficulty">
                     <option value="easy">Easy</option>
                     <option value="medium" selected>Medium</option>
                     <option value="hard">Hard</option>
                 </select>
-                <button id="btn-new-game" class="btn primary">New Game</button>
+                <button id="btn-new" class="btn btn-primary">New</button>
             </div>
         </header>
-        <section class="game-meta">
-            <span class="timer-display">Time: <strong id="timer">00:00</strong></span>
-            <span id="game-status" class="status-display"></span>
+
+        <section class="meta">
+            <span>Timer: <strong id="timer">00:00</strong></span>
+            <span id="status"></span>
         </section>
-        <div id="sudoku-board" class="board-grid"></div>
-        <footer class="action-panel">
-            <button id="btn-hint" class="btn secondary">Get Hint</button>
-            <button id="btn-check" class="btn primary">Check Solution</button>
-            <button id="btn-solve" class="btn outline">Reveal Solution</button>
+
+        <div id="sudoku-grid" class="board-grid"></div>
+
+        <footer class="controls">
+            <button id="btn-hint" class="btn btn-secondary">Hint</button>
+            <button id="btn-verify" class="btn btn-primary">Validate</button>
+            <button id="btn-solve" class="btn btn-secondary">Reveal</button>
         </footer>
+
+        <section class="leaderboard">
+            <h3>Top 10 High Scores (Local Storage)</h3>
+            <ol id="leaderboard-list"></ol>
+        </section>
     </main>
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>
-

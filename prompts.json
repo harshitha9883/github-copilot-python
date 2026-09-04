@@ -1,0 +1,34 @@
+﻿{
+  "milestones": [
+    {
+      "id": "testing_framework",
+      "prompt": "How do I configure pytest for a Flask app testing both the backend solver and REST API routes?",
+      "response_summary": "Copilot suggested standard fixtures for the Flask test client and unit test structure for the solver.",
+      "evaluation": "Accepted. Created tests/test_sudoku.py and tests/test_app.py with pytest.ini."
+    },
+    {
+      "id": "unique_solution",
+      "prompt": "Write a recursive backtracking solution counter in Python to verify a Sudoku board has strictly one solution.",
+      "response_summary": "Copilot provided a recursive counter terminating as soon as 2 solutions are discovered.",
+      "evaluation": "Accepted. Prevents multiple valid configurations when clearing cells."
+    },
+    {
+      "id": "top_10_localstorage",
+      "prompt": "Implement JavaScript functions to track puzzle completion time, maintain top 10 scores, and persist them in browser localStorage.",
+      "response_summary": "Copilot provided sort, slice(0, 10), and JSON.stringify handling for local persistence.",
+      "evaluation": "Accepted with modifications to properly format MM:SS strings."
+    },
+    {
+      "id": "grid_styling",
+      "prompt": "How do I style a 9x9 Sudoku board with CSS Grid so that alternating 3x3 blocks have distinct background colors and clear subgrid boundaries?",
+      "response_summary": "Copilot suggested nth-child border classes and alternating checkerboard classes for blocks.",
+      "evaluation": "Accepted. Implemented alternating block backgrounds and thicker 3x3 boundaries."
+    },
+    {
+      "id": "refactoring_and_rejection",
+      "prompt": "How should I optimize the Sudoku cell clearing algorithm for generating puzzles?",
+      "response_summary": "Copilot initially suggested installing an external C++ SAT-solver wrapper (z3-solver).",
+      "evaluation": "Rejected. Refused external native dependency to keep the package lightweight and fully portable; implemented in-memory backtracking solution counting instead."
+    }
+  ]
+}

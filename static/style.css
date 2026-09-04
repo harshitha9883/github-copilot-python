@@ -1,0 +1,40 @@
+﻿:root {
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --border-thick: #0f172a;
+    --border-thin: #cbd5e1;
+    --subgrid-1: #ffffff;
+    --subgrid-2: #f1f5f9;
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --text: #0f172a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); display: flex; justify-content: center; padding: 2rem 1rem; }
+.container { max-width: 520px; width: 100%; background: var(--card-bg); border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.08); }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.meta { display: flex; justify-content: space-between; margin-bottom: 1rem; font-weight: 600; }
+.board-grid { display: grid; grid-template-columns: repeat(9, 1fr); border: 3px solid var(--border-thick); width: 100%; aspect-ratio: 1/1; }
+
+.cell { border: 1px solid var(--border-thin); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 500; }
+.cell:nth-child(3n) { border-right: 2px solid var(--border-thick); }
+.cell:nth-child(9n) { border-right: none; }
+.board-grid .cell:nth-child(n+19):nth-child(-n+27),
+.board-grid .cell:nth-child(n+46):nth-child(-n+54) { border-bottom: 2px solid var(--border-thick); }
+
+.block-even { background-color: var(--subgrid-1); }
+.block-odd { background-color: var(--subgrid-2); }
+
+.cell input { width: 100%; height: 100%; border: none; text-align: center; font-size: 1.25rem; background: transparent; color: var(--primary); outline: none; }
+.cell.fixed { font-weight: 700; color: #1e293b; }
+
+.controls { display: flex; gap: 0.5rem; margin-top: 1.2rem; }
+.btn { flex: 1; padding: 0.6rem; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-secondary { background: #e2e8f0; }
+
+.leaderboard { margin-top: 1.5rem; border-top: 1px solid var(--border-thin); padding-top: 1rem; }
+.leaderboard h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+.leaderboard ol { padding-left: 1.5rem; font-size: 0.9rem; color: #475569; }
