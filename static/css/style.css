@@ -1,0 +1,22 @@
+:root {
+    --bg-color: #f4f6f9; --card-bg: #ffffff; --border-color: #d1d5db; --border-thick: #1f2937;
+    --text-color: #111827; --accent: #2563eb; --accent-hover: #1d4ed8; --cell-fixed: #374151;
+    --cell-user: #1d4ed8; --cell-error: #ef4444;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; background-color: var(--bg-color); color: var(--text-color); display: flex; justify-content: center; padding: 2rem 1rem; }
+.container { max-width: 520px; width: 100%; background: var(--card-bg); border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.game-meta { display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 0.95rem; }
+.board-grid { display: grid; grid-template-columns: repeat(9, 1fr); border: 2px solid var(--border-thick); width: 100%; aspect-ratio: 1/1; }
+.cell { border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 500; }
+.cell:nth-child(3n) { border-right: 2px solid var(--border-thick); }
+.cell:nth-child(9n) { border-right: none; }
+.board-grid .cell:nth-child(n+19):nth-child(-n+27), .board-grid .cell:nth-child(n+46):nth-child(-n+54) { border-bottom: 2px solid var(--border-thick); }
+.cell input { width: 100%; height: 100%; border: none; text-align: center; font-size: 1.25rem; background: transparent; color: var(--cell-user); outline: none; }
+.cell.fixed { background-color: #f9fafb; color: var(--cell-fixed); font-weight: 700; }
+.action-panel { display: flex; gap: 0.5rem; margin-top: 1.5rem; }
+.btn { flex: 1; padding: 0.6rem; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; }
+.btn.primary { background: var(--accent); color: white; }
+.btn.secondary { background: #e5e7eb; color: var(--text-color); }
+.btn.outline { background: transparent; border: 1px solid var(--border-color); }
