@@ -1,3 +1,6 @@
+﻿# Author: Harshitha
+# Sudoku Generation and Backtracking Validation Engine
+
 import random
 from typing import List, Tuple
 
@@ -53,3 +56,4 @@ class SudokuEngine:
     @classmethod
     def verify_solution(cls, user_board: Grid, solution: Grid) -> bool:
         return user_board == solution
+

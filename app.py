@@ -1,3 +1,6 @@
+﻿# Author: Harshitha
+# Web server API endpoints for Sudoku Web Application
+
 from flask import Flask, jsonify, render_template, request
 from sudoku_engine import SudokuEngine
 
@@ -25,3 +28,4 @@ def validate_solution():
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
+
